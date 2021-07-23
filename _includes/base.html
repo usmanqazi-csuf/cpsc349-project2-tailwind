@@ -1,0 +1,30 @@
+---
+site: Pet Photos
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ title }} - {{ site }}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
+    </head>
+    <body>
+            
+        <nav>
+            <h1>{{ site }}</h1>
+            <ul>
+                <li><a href="{{ '/' | url }}" class="{% if page.url == '/' %}active-page{% endif %}">Home</a></li>
+                <li><a href="{{ '/dog/' | url }}" class="{% if page.url == '/dog/' %}active-page{% endif %}">Dogs Only</a></li>
+                <li><a href="{{ '/cat/' | url }}" class="{% if page.url == '/cat/' %}active-page{% endif %}">Cats Only</a></li>
+                <li><a href="{{ '/other/' | url }}" class="{% if page.url == '/other/' %}active-page{% endif %}">Other Animals</a></li>
+                <li><a href="{{ '/about' | url }}" class="{% if page.url == '/about/' %}active-page{% endif %}">About Us</a></li>
+            </ul>
+        </nav>
+    
+        {{ content }}
+
+        </div>
+
+    </body>
+</html>

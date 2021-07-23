@@ -1,0 +1,31 @@
+---
+title: Dogs
+layout: base
+pagination:
+  data: collections.dogs
+  size: 10
+---
+<h2 class="page-header">A page for dog lovers</h2>
+
+<div class="pet-photos-wrapper">
+  {% for photo in pagination.items %}
+  <li>
+      <a href="{{ photo.url | url }}">
+          <div class="pet-photo-container">
+              <div class="pet-photo-description-container">
+                  {{ photo.data.ai_description }} - 
+                  {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }} 
+              </div>
+              <div class="pet-photo-image-container">
+                  <img src="{{ photo.data.photo_image_url }}" alt="A {{ photo.data.photo_keyword }} photo by 
+                  {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}">
+              </div>
+          </div>
+      </a>
+  </li>
+  {% endfor %}
+  <div class="next-previous-area">
+      <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous | url}}">Previous</a>{% else %}{% endif %}</li>
+      <li>{% if pagination.href.next %}<a href="{{ pagination.href.next | url }}">Next</a>{% else %}{% endif %}</li>
+  </div>
+</div>

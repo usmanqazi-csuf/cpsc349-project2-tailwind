@@ -1,0 +1,48 @@
+SELECT
+    photos.photo_id,
+    photos.photo_url,
+    photos.photo_image_url,
+    photos.photo_submitted_at,
+    photos.photo_featured,
+    photos.photo_width,
+    photos.photo_height,
+    photos.photo_aspect_ratio,
+    photos.photo_description,
+    photos.photographer_username,
+    photos.photographer_first_name,
+    photos.photographer_last_name,
+    photos.exif_camera_make,
+    photos.exif_camera_model,
+    photos.exif_iso,
+    photos.exif_aperture_value,
+    photos.exif_focal_length,
+    photos.exif_exposure_time,
+    photos.photo_location_name,
+    photos.photo_location_latitude,
+    photos.photo_location_longitude,
+    photos.photo_location_country,
+    photos.photo_location_city,
+    photos.stats_views,
+    photos.stats_downloads,
+    photos.ai_description,
+    photos.ai_primary_landmark_name,
+    photos.ai_primary_landmark_latitude,
+    photos.ai_primary_landmark_longitude,
+    photos.ai_primary_landmark_confidence,
+    colors.photo_keyword,
+    colors.ai_service_1_confidence,
+    colors.ai_service_2_confidence,
+    colors.suggested_by_user,
+    colors.hex,
+    colors.red,
+    colors.green,
+    colors.blue,
+    colors.color_keyword,
+    colors.coverage,
+    colors.score
+FROM
+    photos.tsv000 AS photos
+JOIN
+    colors.tsv AS colors
+ON
+    photos.photo_id = colors.photo_id
