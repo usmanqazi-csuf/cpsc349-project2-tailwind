@@ -10,9 +10,11 @@ html, body {
 
 nav {
     display: flex;
+    position: relative;
     flex-wrap: wrap;
     color: white;
     background-color: seagreen;
+    z-index: 1;
 }
 
 nav h1 {
@@ -135,29 +137,33 @@ nav ul li a:hover {
 
 /* Start pet photo page */
 
+.pet-page-body {
+    overflow: hidden;
+}
+
 .pet-photo-file {
     display: flex;
-    flex-direction: row;
+    height: 100%;
+    position: relative;
+    bottom: 34px;
+    flex-direction: column;
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin: 35px 0px;
+    margin: auto;
 }
 
 .pet-photo-file-image-container {
     display: flex;
-    justify-content: center;
-    width: 100%;
-    height: 750px;
-    margin: 0px 25px;
+    padding: 10px;
 }
 
 .pet-photo-file-image-container img {
     border-radius: 25px;
+    max-height: 500px;
 }
 
 .pet-photo-file h2 {
-    color: blue;
     font-size: 1.4rem;
     font-weight: bold;
     margin: 10px;
@@ -165,8 +171,7 @@ nav ul li a:hover {
 
 .pet-photo-file-description-container {
     display: flex;
-    flex: 75%;
-    padding: 25px;
+    padding: 10px;
     flex-direction: column;
 }
 
