@@ -7,7 +7,7 @@ pagination:
 ---
 <h2 class="m-5 text-center font-bold text-base">A page for those who don't like cats or dogs</h2>
 
-<div class="flex my-5 flex-wrap items-center justify-center">
+<div class="flex my-5 flex-wrap items-center justify-center mx-16">
     {% for photo in pagination.items %}
         <a href="{{ photo.url | url }}">
             <div class="flex max-w-2xl h-48 p-5 m-3 items-center 
