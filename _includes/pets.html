@@ -46,18 +46,18 @@ site: Pet Photos
     </head>
     <body class="pet-page-body">
         <nav class="relative flex items-center justify-between flex-wrap bg-green-500">
-            <div class="text-5xl flex-1 text-center text-white">{{ site }}</div>
-            <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500">
+            <h2 class="text-4xl flex-1 text-center text-white">{{ site }}</h2>
+            <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500 text-2xl">
                 <li class="p-8"><a href="{{ '/' | url }}" class="{% if page.url == '/' %}
-                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Home</a></li>
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-900 mr-auto">Home</a></li>
                 <li class="p-8"><a href="{{ '/dog/' | url }}" class="{% if page.url == '/dog/' %}
-                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Dogs Only</a></li>
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-900 mr-auto">Dogs Only</a></li>
                 <li class="p-8"><a href="{{ '/cat/' | url }}" class="{% if page.url == '/cat/' %}
-                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Cats Only</a></li>
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-900 mr-auto">Cats Only</a></li>
                 <li class="p-8"><a href="{{ '/other/' | url }}" class="{% if page.url == '/other/' %}
-                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Other Animals</a></li>
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-900 mr-auto">Other Animals</a></li>
                 <li class="p-8"><a href="{{ '/about' | url }}" class="{% if page.url == '/about/' %}
-                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">About Us</a></li>
+                    underline text-blue-200{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-900 mr-auto">About Us</a></li>
             </ul>
         </nav>
     
