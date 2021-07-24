@@ -10,7 +10,7 @@ pagination:
 <div class="flex my-5 flex-wrap items-center justify-center mx-16">
     {% for photo in pagination.items %}
         <a href="{{ photo.url | url }}">
-            <div class="flex max-w-2xl h-48 p-5 m-3 items-center 
+            <div class="flex w-160 h-44 p-5 m-3 items-center text-center justify-center
                 border-4 border-green-400 rounded-lg bg-green-100 hover:bg-blue-100 transition delay-200 ease-in-out">
                 <div class="mx-5">
                     {{ photo.data.ai_description }} - 
@@ -24,8 +24,15 @@ pagination:
             </div>
         </a>
     {% endfor %}
-    <div class="next-previous-area">
-        {% if pagination.href.previous %}<h2><a href="{{ pagination.href.previous | url}}">Previous</a>{% endif %}</h2>
-        {% if pagination.href.next %}<h2><a href="{{ pagination.href.next | url }}">Next</a>{% endif %}</h2>
+
+    <div class="flex my-10 justify-evenly text-center w-full">
+        {% if pagination.href.previous %}
+            <h2 class="text-blue-600 justify-center text-center font-bold text-3xl">
+                <a href="{{ pagination.href.previous | url}}">Previous</a></h2>
+        {% endif %}
+        {% if pagination.href.next %}
+            <h2 class="text-blue-600 justify-center text-center font-bold text-3xl">
+                <a href="{{ pagination.href.next | url }}">Next</a></h2>
+        {% endif %}
     </div>
 </div>
