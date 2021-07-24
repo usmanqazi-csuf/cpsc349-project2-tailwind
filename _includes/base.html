@@ -10,20 +10,23 @@ site: Pet Photos
         <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
     </head>
     <body>
-        <nav>
-            <h1>{{ site }}</h1>
-            <ul>
-                <li><a href="{{ '/' | url }}" class="{% if page.url == '/' %}active-page{% endif %}">Home</a></li>
-                <li><a href="{{ '/dog/' | url }}" class="{% if page.url == '/dog/' %}active-page{% endif %}">Dogs Only</a></li>
-                <li><a href="{{ '/cat/' | url }}" class="{% if page.url == '/cat/' %}active-page{% endif %}">Cats Only</a></li>
-                <li><a href="{{ '/other/' | url }}" class="{% if page.url == '/other/' %}active-page{% endif %}">Other Animals</a></li>
-                <li><a href="{{ '/about' | url }}" class="{% if page.url == '/about/' %}active-page{% endif %}">About Us</a></li>
+        <nav class="relative flex items-center justify-between flex-wrap bg-green-500">
+            <div class="text-5xl flex-1 text-center text-white">{{ site }}</div>
+            <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500">
+                <li class="p-8"><a href="{{ '/' | url }}" class="{% if page.url == '/' %}
+                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Home</a></li>
+                <li class="p-8"><a href="{{ '/dog/' | url }}" class="{% if page.url == '/dog/' %}
+                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Dogs Only</a></li>
+                <li class="p-8"><a href="{{ '/cat/' | url }}" class="{% if page.url == '/cat/' %}
+                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Cats Only</a></li>
+                <li class="p-8"><a href="{{ '/other/' | url }}" class="{% if page.url == '/other/' %}
+                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Other Animals</a></li>
+                <li class="p-8"><a href="{{ '/about' | url }}" class="{% if page.url == '/about/' %}
+                    underline text-purple-300{% endif %} block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">About Us</a></li>
             </ul>
         </nav>
     
         {{ content }}
-
-        </div>
 
         <footer>
             <h1>Email Us!</h1>

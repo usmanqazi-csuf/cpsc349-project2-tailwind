@@ -5,27 +5,27 @@ pagination:
   data: collections.others
   size: 10
 ---
-<h2 class="page-header">A page for those who don't like cats or dogs</h2>
+<h2 class="m-5 text-center font-bold text-base">A page for those who don't like cats or dogs</h2>
 
-<div class="pet-photos-wrapper">
-  {% for photo in pagination.items %}
-  <li>
-      <a href="{{ photo.url | url }}">
-          <div class="pet-photo-container">
-              <div class="pet-photo-description-container">
-                  {{ photo.data.ai_description }} - 
-                  {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }} 
-              </div>
-              <div class="pet-photo-image-container">
-                  <img src="{{ photo.data.photo_image_url }}" alt="A {{ photo.data.photo_keyword }} photo by 
-                  {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}">
-              </div>
-          </div>
-      </a>
-  </li>
-  {% endfor %}
-  <div class="next-previous-area">
-      <li>{% if pagination.href.previous %}<a href="{{ pagination.href.previous | url}}">Previous</a>{% else %}{% endif %}</li>
-      <li>{% if pagination.href.next %}<a href="{{ pagination.href.next | url }}">Next</a>{% else %}{% endif %}</li>
-  </div>
+<div class="flex my-5 flex-wrap items-center justify-center">
+    {% for photo in pagination.items %}
+        <a href="{{ photo.url | url }}">
+            <div class="flex max-w-2xl h-48 p-5 m-3 items-center 
+                border-4 border-green-400 rounded-lg bg-green-100 hover:bg-blue-100 transition delay-200 ease-in-out">
+                <div class="mx-5">
+                    {{ photo.data.ai_description }} - 
+                    {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }} 
+                </div>
+                <div class="justify-center items-center text-center">
+                    <img class="text-center max-h-40 border-2 border-green-600"
+                        src="{{ photo.data.photo_image_url }}" alt="A {{ photo.data.photo_keyword }} photo by 
+                        {{ photo.data.photographer_first_name}} {{ photo.data.photographer_last_name }}">
+                </div>
+            </div>
+        </a>
+    {% endfor %}
+    <div class="next-previous-area">
+        {% if pagination.href.previous %}<h2><a href="{{ pagination.href.previous | url}}">Previous</a>{% endif %}</h2>
+        {% if pagination.href.next %}<h2><a href="{{ pagination.href.next | url }}">Next</a>{% endif %}</h2>
+    </div>
 </div>
