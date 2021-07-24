@@ -1,0 +1,65 @@
+---
+site: Pet Photos
+---
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>{{ ai_description }} - {{ site }}</title>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="stylesheet" href="{{ '/styles/tailwind.css' | url }}">
+        <link rel="stylesheet" href="{{ '/styles/main.css?version=1' | url }}">
+        <style>
+            :root {
+                --red: {{ red }};
+                --green: {{ green }};
+                --blue: {{ blue }};
+        
+                --accessible-color: calc(
+                    (
+                    (
+                        (
+                        (var(--red) * 299) +
+                        (var(--green) * 587) +
+                        (var(--blue) * 114)
+                        ) / 1000
+                    ) - 128
+                    ) * -1000
+                );
+            }
+    
+            body {
+                color:
+                    rgb(
+                    var(--accessible-color),
+                    var(--accessible-color),
+                    var(--accessible-color)
+                    );
+                background-color:
+                    rgb(
+                    var(--red),
+                    var(--green),
+                    var(--blue)
+                    );
+            }
+
+            </style>
+    </head>
+    <body class="pet-page-body">
+        <nav>
+            <h1>{{ site }}</h1>
+            <ul>
+                <li><a href="{{ '/' | url }}" class="{% if page.url == '/' %}active-page{% endif %}">Home</a></li>
+                <li><a href="{{ '/dog/' | url }}" class="{% if page.url == '/dog/' %}active-page{% endif %}">Dogs Only</a></li>
+                <li><a href="{{ '/cat/' | url }}" class="{% if page.url == '/cat/' %}active-page{% endif %}">Cats Only</a></li>
+                <li><a href="{{ '/other/' | url }}" class="{% if page.url == '/other/' %}active-page{% endif %}">Other Animals</a></li>
+                <li><a href="{{ '/about' | url }}" class="{% if page.url == '/about/' %}active-page{% endif %}">About Us</a></li>
+            </ul>
+        </nav>
+    
+        {{ content }}
+
+        </div>
+
+    </body>
+</html>
