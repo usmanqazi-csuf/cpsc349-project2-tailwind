@@ -7,12 +7,12 @@
     "eleventy": "npx @11ty/eleventy --watch",
     "tailwind": "npx tailwindcss --input styles/tailwind.css --output _site/styles/tailwind.css --watch",
     "browsersync": "npx browser-sync start --server _site/ --files \"_site/**/*\"",
-    "publish": "npx @11ty/eleventy --output=docs --pathprefix=cpsc349-project2 --quiet && npx tailwindcss --input styles/tailwind.css --output docs/styles/tailwind.css"
+    "publish": "npx @11ty/eleventy --output=docs --pathprefix=cpsc349-project2-tailwind --quiet && npx tailwindcss --input styles/tailwind.css --output docs/styles/tailwind.css"
   },
   "author": "Kenytt Avery",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/usmanqazi-csuf/cpsc349-project2-tailwind.git"
+    "url": "git+https://github.com/ProfAvery/cpsc349-project2-tailwind.git"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
