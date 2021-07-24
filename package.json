@@ -12,7 +12,7 @@
   "author": "Kenytt Avery",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ProfAvery/cpsc349-project2.git"
+    "url": "git+https://github.com/ProfAvery/cpsc349-project2-tailwind.git"
   },
   "devDependencies": {
     "@11ty/eleventy": "^0.12.1",
