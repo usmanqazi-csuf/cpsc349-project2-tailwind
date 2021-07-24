@@ -1,20 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title> - Pet Photos</title>
+        <title>black cat on black textile - Pet Photos</title>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="/cpsc349-project2/styles/tailwind.css">
+        <style>
+            :root {
+                --red: 242;
+                --green: 223;
+                --blue: 201;
+        
+                --accessible-color: calc(
+                    (
+                    (
+                        (
+                        (var(--red) * 299) +
+                        (var(--green) * 587) +
+                        (var(--blue) * 114)
+                        ) / 1000
+                    ) - 128
+                    ) * -1000
+                );
+            }
+    
+            body {
+                color:
+                    rgb(
+                    var(--accessible-color),
+                    var(--accessible-color),
+                    var(--accessible-color)
+                    );
+                background-color:
+                    rgb(
+                    var(--red),
+                    var(--green),
+                    var(--blue)
+                    );
+            }
+
+            </style>
     </head>
-    <body>
-        <nav>
-            <h1>Pet Photos</h1>
-            <ul>
-                <li><a href="/cpsc349-project2/" class="">Home</a></li>
-                <li><a href="/cpsc349-project2/dog/" class="">Dogs Only</a></li>
-                <li><a href="/cpsc349-project2/cat/" class="">Cats Only</a></li>
-                <li><a href="/cpsc349-project2/other/" class="">Other Animals</a></li>
-                <li><a href="/cpsc349-project2/about" class="">About Us</a></li>
+    <body class="pet-page-body">
+        <nav class="relative flex items-center justify-between flex-wrap bg-green-500">
+            <div class="text-5xl flex-1 text-center text-white">Pet Photos</div>
+            <ul class = "right-0 w-full flex justify-center flex-grow sm:flex sm:items-center sm:w-auto bg-green-500">
+                <li class="p-8"><a href="/cpsc349-project2/" class=" block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Home</a></li>
+                <li class="p-8"><a href="/cpsc349-project2/dog/" class=" block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Dogs Only</a></li>
+                <li class="p-8"><a href="/cpsc349-project2/cat/" class=" block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Cats Only</a></li>
+                <li class="p-8"><a href="/cpsc349-project2/other/" class=" block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">Other Animals</a></li>
+                <li class="p-8"><a href="/cpsc349-project2/about" class=" block mt-4 sm:inline-block sm:mt-0 text-white hover:text-blue-300 mr-auto">About Us</a></li>
             </ul>
         </nav>
     
@@ -50,16 +85,5 @@
 </div>
 
 
-        </div>
-
-        <footer>
-            <h1>Email Us!</h1>
-            <ul>
-                <li><a href="mailto:nolan794@csu.fullerton.edu">Nolan O'Donnell</a></li>
-                <li><a href="mailto:mperez5891@csu.fullerton.edu">Manuel Perez</a></li>
-                <li><a href="mailto:usmanqazi@csu.fullerton.edu">Mohammad Usman Qazi</a></li>
-                <li><a href="mailto:cweichlein@csu.fullerton.edu">Christopher Weichlein</a></li>
-            </ul>
-        </footer>
     </body>
 </html>
