@@ -23,13 +23,13 @@ with open(sys.argv[1]) as tsvfile:
         with open(f'../photos/{n:03}.html', 'w') as f:
             yaml.dump(row, f, explicit_start=True)
             print('---', file=f)
-            html = f"""<div class="pet-photo-file">
-    <div class="pet-photo-file-image-container">
-        <img src="{{{{ photo_image_url }}}}" alt="A {{{{ photo.data.photo_keyword }}}} photo by 
+            html = f"""<div class="flex h-full relative flex-col text-center items-center justify-center m-auto">
+    <div class="flex p-10">
+        <img class="rounded-3xl max-h-500px" src="{{{{ photo_image_url }}}}" alt="A {{{{ photo.data.photo_keyword }}}} photo by 
                   {{{{ photo.data.photographer_first_name}}}} {{{{ photo.data.photographer_last_name }}}}"/>
     </div>
-    <div class = "pet-photo-file-description-container">
-        <h2><a href="{{{{ photo_url }}}}" target="_blank">{description}</a></h2>
+    <div class="flex flex-col">
+        <h2 class="text-2xl m-2 font-bold hover:text-blue-300 transition delay-200 ease-in-out"><a href="{{{{ photo_url }}}}" target="_blank">{description}</a></h2>
         <ul>
             {{% if photographer_first_name != '' %}}
             <li><p>Photographer: {{{{ photographer_first_name }}}} {{{{ photographer_last_name }}}}</p></li>

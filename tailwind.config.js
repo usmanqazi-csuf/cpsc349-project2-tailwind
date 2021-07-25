@@ -5,6 +5,12 @@ module.exports = {
     extend: {
       spacing: {
         '160': '40rem'
+      },
+      inset: {
+        '48px': '48px'
+      },
+      maxHeight: {
+        '500px': '500px'
       }
     },
   },
